@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Homepage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem; /* Space between logo and text */
+        }
+
+        .logo img {
+            height: 40px; /* Adjust height as needed */
+            width: auto; /* Maintain aspect ratio */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00bcd4;
+        }
+
+        .hero {
+            background-image: url('main-photo.jpeg');
+
+            /* background-image: url('main-photo.jpeg/1200x600'); */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+        }
+
+        .content {
+            padding: 2rem 0;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section h2 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        /* Gallery Section */
+        #gallery {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        #gallery .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        #gallery .project {
+            flex: 1 1 calc(33.333% - 1rem); /* Three items per row with some spacing */
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+        }
+
+        #gallery .project img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 1rem;
+            border-radius: 4px;
+        }
+
+        #gallery .project p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #333;
+            text-align: justify;
+        }
+
+
+        /* #gallery img {
+            width: 30%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        } */
+
+        /* Contact Section Styles */
+        #contact {
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        #contact h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #222;
+            text-align: center;
+        }
+
+        #contact h3 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        #contact p {
+            margin: 10px 0;
+        }
+
+        #contact form {
+            margin-top: 20px;
+        }
+
+        #contact label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: inline-block;
+            color: #555;
+        }
+
+        #contact input[type="text"],
+        #contact input[type="email"],
+        #contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        #contact input[type="text"]:focus,
+        #contact input[type="email"]:focus,
+        #contact textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        #contact button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #contact button:hover {
+            background-color: #0056b3;
+        }
+
+        #contact a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        #contact a:hover {
+            text-decoration: underline;
+        }
+
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="logo.jpeg" alt="Enterprise Logo">
+                    <span>R. A. Enterprises</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#about">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class=" container">
+            <h1>Welcome to Our Enterprise</h1>
+            <p>Innovating for a better tomorrow</p>
+        </div>
+    </section>
+
+    <main class="content container">
+        <section id="about" class="section">
+            <h2>About Us</h2>
+            <p><strong>Who We Are</strong></p>
+    
+            <p>R.A. Enterprises was established in 2012 with the goal of transforming the industrial sector by offering superior machining services and cutting-edge automation solutions. With years of expertise, we have made a name for ourselves in the business by being dependable, quality-focused, and customer-focused.</p>
+    
+            <p><strong>Our Objective:</strong> To provide unmatched solutions that improve accuracy and efficiency so that our clients can succeed in their industries.</p>
+    
+            <p><strong>Our Goal:</strong> To be a pioneer in the fields of fabrication, machining, and industrial automation, establishing new standards for quality and innovation.</p>
+    
+            <p><strong>Fundamental Principles</strong></p>
+            <ul>
+                <li><strong>Innovation:</strong> Using cutting-edge technologies to deliver better results.</li>
+                <li><strong>Quality:</strong> Making certain that every job we take on is of the highest caliber.</li>
+                <li><strong>Integrity:</strong> Establishing credibility via open and moral behavior.</li>
+                <li><strong>Customer-Centric Approach:</strong> Putting our clients' needs and success first.</li>
+            </ul>
+        </section>
+    
+        <section id="services" class="section">
+            <h2>Our Services</h2>
+            <p><strong>Proficiency</strong></p>
+    
+            <p>We at R.A. Enterprises provide a wide range of services that are intended to satisfy our clients' various needs:</p>
+    
+            <h3>Automation for Equipment Used in Welding</h3>
+            <ul>
+                <li>Personalized automation solutions to improve the precision and effectiveness of welding.</li>
+                <li>Incorporating cutting-edge control systems to ensure smooth operations.</li>
+            </ul>
+    
+            <h3>Machining with CNC and VMC</h3>
+            <ul>
+                <li>CNC and VMC machining services with high precision for intricate parts.</li>
+                <li>Proficiency with a broad range of materials and designs.</li>
+            </ul>
+    
+            <h3>Manufacturing Operations</h3>
+            <ul>
+                <li>Superior fabrication services for both custom and industrial uses.</li>
+                <li>Expertly crafted to your precise requirements.</li>
+            </ul>
+    
+            <h3>Sectors We Cover</h3>
+            <ul>
+                <li>Automobile</li>
+                <li>Aircraft</li>
+                <li>Producing</li>
+                <li>Building</li>
+                <li>Heavy Equipment</li>
+            </ul>
+    
+            <p>Searching for an answer? To discuss your needs, <a href="#contact">get in contact</a>.</p>
+        </section>
+
+
+        <section id="gallery" class="section">
+            <h2>Our Work</h2>
+            <div class="gallery">
+                <div class="project">
+                    <img src="project1.jpeg" alt="Project 1">
+                    <p>The goal of R.A. Enterprise's autonomous welding project at Mahindra & Mahindra is to deploy robotic welding technologies to enhance the accuracy, productivity, and caliber of car manufacturing procedures. For Mahindra's production lines, R.A. Enterprise created and installed sophisticated robotic welding equipment, particularly for welding important automobile parts including frames, body panels, and chassis. By decreasing human error and production cycle durations, these robotic devices improve welding consistency and speed. Mahindra & Mahindra gains from reduced labor costs, better workplace safety, and higher-quality welds when the welding process is automated. The initiative also aids in material optimization, waste reduction, and sustainability promotion. Mahindra is also able to scale production capacity while upholding strict quality control standards thanks to the partnership with R.A. Enterprise. All things considered, Mahindra & Mahindra's capacity to produce automobiles more effectively, with better quality and lower costs, has been greatly aided by the automatic welding initiative.</p>
+                </div>
+                <div class="project">
+                    <img src="project2.jpeg" alt="Project 2">
+                    <p>With an emphasis on creating high-precision parts essential for military applications, R.A. Enterprise has created sophisticated CNC machining solutions for defense projects. These solutions are designed to produce intricate components for defense technology such as armored vehicles, aircraft, and weapon systems. By satisfying the exacting quality standards needed for defense, the use of CNC machines guarantees remarkable accuracy, reproducibility, and efficiency. The project minimizes errors and shortens production time while improving the creation of robust, dependable, and high-performance components. R.A. Enterprise's CNC machining innovation makes a substantial contribution to the defense industry by providing high-quality, reasonably priced parts that are essential for sophisticated military systems and national security.</p>
+                </div>
+                <div class="project">
+                    <img src="project3.jpeg" alt="Project 3">
+                    <p>In order to produce high-quality plastic items, mold pieces must be machined at a vertical machining center, or VMC. To guarantee precise specifications, precision mold components are designed and manufactured utilizing VMC machines. The company creates intricate mold structures by using a number of very accurate automated processes, including as cutting, drilling, and finishing. VMC machining is especially advantageous since it can work with a variety of materials, including hardened alloys, steel, and aluminum—all of which are frequently used in molds. As a result, the molds have precise tolerances, improved durability, and excellent surface finishes. Injection molding or other molding techniques are then utilized to shape plastic objects using the molds. VMC machining enhances product uniformity, speeds up production, and boosts efficiency. Businesses may fulfill the demands of contemporary plastic manufacturing by employing cutting-edge VMC technology, which guarantees accurate, repeatable production runs for a variety of applications.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <p><strong>We’re Here to Help!</strong></p>
+            <p>
+                Get in touch with us to learn more about our services or to discuss your project requirements. Our team of experts is ready to assist you.
+            </p>
+        
+            <h3>Contact Details</h3>
+            <p>
+                <strong>Address:</strong> Plot No 28/B, Mohite Industrial Estate, MIDC, Hingna Road, NAGPUR<br>
+                <strong>Phone:</strong> +91-9422817579<br>
+                <strong>Business Hours:</strong><br>
+                Monday to Saturday: 9:00 AM - 6:00 PM<br>
+                Sunday: Closed
+            </p>
+        
+            <h3>Contact Form</h3>
+            <form action="#" method="post">
+                <label for="name">Your Name</label><br>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+        
+                <label for="email">Your Email</label><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+        
+                <label for="message">Your Message</label><br>
+                <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required></textarea><br><br>
+        
+                <button type="submit">Submit</button>
+            </form>
+        
+            <p>We look forward to partnering with you for your industrial needs!</p>
+            <p>Have questions or want to work with us? Reach out anytime at <a href="mailto:ashishlonkar@raeenterprises.com">ashishlonkar@raeenterprises.com</a>.</p>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Enterprise. All rights reserved.</p>
+    </footer>
+</body>
+</html>
