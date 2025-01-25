@@ -347,18 +347,35 @@
             </p>
         
             <h3>Contact Form</h3>
-            <form action="#" method="post">
+            <form action="#" method="post" onsubmit="return showAlert()">
                 <label for="name">Your Name</label><br>
                 <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
-        
+            
                 <label for="email">Your Email</label><br>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
-        
+            
                 <label for="message">Your Message</label><br>
                 <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required></textarea><br><br>
-        
+            
                 <button type="submit">Submit</button>
             </form>
+            
+            <script>
+                function showAlert() {
+                    const name = document.getElementById("name").value;
+                    const email = document.getElementById("email").value;
+                    const message = document.getElementById("message").value;
+            
+                    if (name && email && message) {
+                        alert(`Thank you, ${name}! Your message has been submitted.`);
+                        return true; // Proceed with form submission
+                    } else {
+                        alert("Please fill in all the fields before submitting.");
+                        return false; // Prevent form submission
+                    }
+                }
+            </script>
+            
         
             <p>We look forward to partnering with you for your industrial needs!</p>
             <p>Have questions or want to work with us? Reach out anytime at <a href="mailto:ashishlonkar@raeeterprises.com">ashishlonkar@raeeterprises.com</a>.</p>
