@@ -347,7 +347,7 @@
             </p>
         
             <h3>Contact Form</h3>
-            <form action="https://www.raeeterprises.com/" method="post" onsubmit="return showAlert()">
+            <form onsubmit="return handleSubmit(event)">
                 <label for="name">Your Name</label><br>
                 <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
             
@@ -361,20 +361,28 @@
             </form>
             
             <script>
-                function showAlert() {
+                function handleSubmit(event) {
+                    // Prevent the default form submission
+                    event.preventDefault();
+            
+                    // Retrieve form data
                     const name = document.getElementById("name").value;
                     const email = document.getElementById("email").value;
                     const message = document.getElementById("message").value;
             
                     if (name && email && message) {
+                        // Show an alert message
                         alert(`Thank you, ${name}! Your message has been submitted.`);
-                        return true; // Proceed with form submission
+                        
+                        // Redirect to the intended web link
+                        window.location.href = "https://www.raeeterprises.com/";
                     } else {
+                        // Alert the user to fill in all fields
                         alert("Please fill in all the fields before submitting.");
-                        return false; // Prevent form submission
                     }
                 }
             </script>
+            
             
             
         
